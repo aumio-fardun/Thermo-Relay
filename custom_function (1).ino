@@ -24,16 +24,16 @@ float Get_Temp(void){
 void HeaterControl(float temperature)
 {
   
-  if (temperature > 60.0)
+  if (temperature < 20.0)
   {
     digitalWrite(AC_RELAY_PIN, HIGH);
-    Serial.println("Temperature > 60°C. Heater turned ON.");
+    Serial.println("Temperature > 20°C. Heater turned ON.");
   }
   
-  else if (temperature < 20.0)
+  else if (temperature < 60.0)
   {
     digitalWrite(AC_RELAY_PIN, LOW);
-    Serial.println("Temperature < 20°C. Heater turned OFF.");
+    Serial.println("Temperature < 60°C. Heater turned OFF.");
   }
   
 }
